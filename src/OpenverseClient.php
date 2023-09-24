@@ -22,9 +22,15 @@ class OpenverseClient
      */
     private array $instances = [];
 
-    public function __construct(string $accessToken = null)
+    public function __construct(public ?string $accessToken = null)
     {
         $this->request = new OpenverseRequest($accessToken);
+    }
+
+    public  function withAccessToken(): static
+    {
+        $this->accessToken = config('openverse.accessToken') ?? null;
+        return $this;
     }
 
     /**

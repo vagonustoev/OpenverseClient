@@ -53,6 +53,24 @@ class ImageSearch implements ActionInterface
      * } $params
      */
     public array $params = array();
+    private array $methods = [
+        'page',
+        'page_size',
+        'q',
+        'source',
+        'excluded_source',
+        'license',
+        'license_type',
+        'creator',
+        'tags',
+        'title',
+        'filter_dead',
+        'mature',
+        'mature',
+        'category',
+        'aspect_ratio',
+        'size',
+    ];
 
     public function __construct(OpenverseRequest $request)
     {
@@ -107,9 +125,13 @@ class ImageSearch implements ActionInterface
      * @param string $name
      * @param array<array-key, mixed> $arg
      * @return ImageSearch
+     * @throws OpenverseClientException
      */
     public function __call(string $name, array $arg): self
     {
+        if(!in_array($name, $this->methods)){
+            throw new OpenverseClientException("Class $name not found");
+        }
         $value = $arg[0];
         if(gettype($value) == 'object'){
             $value = $value->toString();
