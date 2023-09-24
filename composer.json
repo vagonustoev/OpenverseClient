@@ -1,0 +1,26 @@
+{
+    "name": "vagonustoev/openverse-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vagon Ustoev"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.4",
+        "illuminate/support": "^9.18|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OpenverseClient\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OpenverseClient\\OpenverseServiceProvider"
+            ]
+        }
+    }
+}
