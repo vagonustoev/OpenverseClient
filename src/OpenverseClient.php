@@ -32,7 +32,7 @@ class OpenverseClient
      */
     public function __call(string $name, array $_): ActionInterface
     {
-        $class = 'OpenverseClient\\' . ucfirst($name);
+        $class = 'OpenverseClient\\Actions\\' . ucfirst($name);
         if (!class_exists($class)) {
             throw new OpenverseClientException("Class $class not found");
         }
