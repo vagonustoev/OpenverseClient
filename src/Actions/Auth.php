@@ -21,7 +21,7 @@ class Auth implements ActionInterface
      * @param string $description
      * @param string $email
      *
-     * @return array
+     * @return array<mixed>
      * @throws OpenverseClientException
      */
     public function register(string $name, string $description, string $email): array
@@ -41,7 +41,7 @@ class Auth implements ActionInterface
      * @param string $clientSecret
      * @param string $grantType
      *
-     * @return array
+     * @return array<mixed>
      * @throws OpenverseClientException
      */
     public function createToken(string $clientId, string $clientSecret, string $grantType = 'client_credentials'): array
@@ -57,7 +57,7 @@ class Auth implements ActionInterface
     /**
      * Get information about your API key.
      *
-     * @return array
+     * @return array<mixed>
      * @throws OpenverseClientException
      */
     public function tokenInfo(): array

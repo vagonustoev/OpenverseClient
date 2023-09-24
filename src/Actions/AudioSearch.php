@@ -8,6 +8,7 @@ use OpenverseClient\Enums\License;
 use OpenverseClient\Enums\LicenseType;
 use OpenverseClient\Exceptions\OpenverseClientException;
 use OpenverseClient\OpenverseRequest;
+use OpenverseClient\Traits\EnumTrait;
 
 /**
  * @method $this page(integer $page) The page of results to retrieve.
@@ -30,6 +31,26 @@ use OpenverseClient\OpenverseRequest;
 class AudioSearch implements ActionInterface
 {
     private OpenverseRequest $request;
+    /**
+     * @var array{
+     *      page?: integer,
+     *      page_size?: integer,
+     *      q?: string,
+     *      source?: string,
+     *      excluded_source?: string,
+     *      license?: string,
+     *      license_type?: string,
+     *      creator?: string,
+     *      tags?: string,
+     *      title?: string,
+     *      filter_dead?: boolean,
+     *      extension?: string,
+     *      mature?: string,
+     *      category?: string,
+     *      length?: string,
+     *      peaks?: boolean
+     * } $params
+     */
     public array $params = array();
 
     public function __construct(OpenverseRequest $request)
@@ -39,7 +60,7 @@ class AudioSearch implements ActionInterface
 
     /**
      * Search audio
-     * @return array
+     * @return array<mixed>
      *
      * @throws OpenverseClientException
      */
@@ -54,22 +75,22 @@ class AudioSearch implements ActionInterface
 
     /**
      * @param array{
-     *     page: integer,
-     *     page_size: integer,
-     *     q: string,
-     *     source: string,
-     *     excluded_source: string,
-     *     license: string,
-     *     license_type: string,
-     *     creator: string,
-     *     tags: string,
-     *     title: string,
-     *     filter_dead: boolean,
-     *     extension: string,
-     *     mature: string,
-     *     category: string,
-     *     length: string,
-     *     peaks: boolean
+     *     page?: integer,
+     *     page_size?: integer,
+     *     q?: string,
+     *     source?: string,
+     *     excluded_source?: string,
+     *     license?: string,
+     *     license_type?: string,
+     *     creator?: string,
+     *     tags?: string,
+     *     title?: string,
+     *     filter_dead?: boolean,
+     *     extension?: string,
+     *     mature?: string,
+     *     category?: string,
+     *     length?: string,
+     *     peaks?: boolean
      * } $params
      * @return $this
      */

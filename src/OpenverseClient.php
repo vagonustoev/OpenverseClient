@@ -17,6 +17,9 @@ class OpenverseClient
 {
     private OpenverseRequest $request;
 
+    /**
+     * @var array<mixed>
+     */
     private array $instances = [];
 
     public function __construct(string $accessToken = null)

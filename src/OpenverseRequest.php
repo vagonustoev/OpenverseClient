@@ -22,9 +22,9 @@ class OpenverseRequest
      * Makes post request.
      *
      * @param string $endpoint
-     * @param array $params
+     * @param array<mixed> $params
      *
-     * @return array
+     * @return array<mixed>
      *
      * @throws OpenverseClientException
      */
@@ -45,7 +45,7 @@ class OpenverseRequest
      * @param string $endpoint
      * @param string $params
      *
-     * @return array
+     * @return array<mixed>
      *
      * @throws OpenverseClientException
      */
@@ -65,7 +65,7 @@ class OpenverseRequest
      *
      * @param ResponseInterface $response
      *
-     * @return array
+     * @return array<mixed>
      *
      * @throws OpenverseClientException
      */
@@ -85,7 +85,7 @@ class OpenverseRequest
      *
      * @param string $body
      *
-     * @return array
+     * @return array<mixed>
      */
     private function decodeBody(string $body): array
     {

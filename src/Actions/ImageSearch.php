@@ -31,6 +31,27 @@ use OpenverseClient\OpenverseRequest;
 class ImageSearch implements ActionInterface
 {
     private OpenverseRequest $request;
+
+    /**
+     * @var array{
+     *      page?: integer,
+     *      page_size?: integer,
+     *      q?: string,
+     *      source?: string,
+     *      excluded_source?: string,
+     *      license?: string,
+     *      license_type?: string,
+     *      creator?: string,
+     *      tags?: string,
+     *      title?: string,
+     *      filter_dead?: boolean,
+     *      extension?: string,
+     *      mature?: string,
+     *      category?: string,
+     *      aspect_ratio?: string,
+     *      size?: string
+     * } $params
+     */
     public array $params = array();
 
     public function __construct(OpenverseRequest $request)
@@ -40,7 +61,7 @@ class ImageSearch implements ActionInterface
 
     /**
      * Search image
-     * @return array
+     * @return array<mixed>
      *
      * @throws OpenverseClientException
      */
